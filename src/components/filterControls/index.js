@@ -32,4 +32,8 @@ const FilterControls = props => {
       </div>
   );
 };
+const handleChange = (e, type, value) => {
+    e.preventDefault()
+    props.onUserInput(type, value)   // NEW
+  }
 export default FilterControls;
