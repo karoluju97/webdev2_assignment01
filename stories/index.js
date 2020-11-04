@@ -70,6 +70,9 @@ const sample = {
     {
       iso_3166_1: "US",
       name: "United States of America"
+    },
+    {
+      iso_3166
     }
   ],
   release_date: "2017-12-13",
