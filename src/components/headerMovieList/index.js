@@ -1,27 +1,16 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { withRouter } from "react-router-dom";
 
-const MovieHeader = ({ movie, history }) => {
+const Header = ({ title, numMovies }) => {
   return (
     <div className="row">
-             <div className="col-2">
-          <button onClick={() => history.goBack()}>
-            <FontAwesomeIcon icon={["fas", "arrow-circle-left"]} size="2x" />
-            <span>{" Back"}</span>
-          </button>
-        </div>
-      <div className="col-6 offset-3">
+      <div className="col-md-6 offset-4">
         <h2>
-          {movie.title}
-          {"  "}
-          <a href={movie.homepage}>
-            <FontAwesomeIcon icon={["fas", "home"]} size="1x" />
-          </a>
+          {`${title}  `}
+          <span className="badge badge-pill badge-success">{numMovies}</span>
         </h2>
       </div>
     </div>
   );
 };
 
-export default withRouter( MovieHeader );
+export default Header;
