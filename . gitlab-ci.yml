@@ -3,10 +3,14 @@ image: cypress/browsers:node12.0.0-chrome73
 
 # Pipeline
 stages:
-  - install
-  - build
-  - test
+   - install
+   - build
+   - test
 
+variables:
+  npm_config_cache: "$CI_PROJECT_DIR/.npm"
+  CYPRESS_CACHE_FOLDER: "$CI_PROJECT_DIR/cache/Cypress"
+  CYPRESS_TMDB_KEY: "b3ecb9b12961342dace36eaa8a4fde72"
 # Jobs 
 
 install_dependencies:
@@ -21,3 +25,12 @@ bundle_app:
   stage: build
   script:
     - npm run build
+
+e2etest:    
+    stage: test
+    before_script:
+      - npm install -g http-server
+      - npm install cypress
+    script:
+       # start the server in the background
+      - npm run start:ci
