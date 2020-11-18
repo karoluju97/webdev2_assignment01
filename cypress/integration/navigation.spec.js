@@ -58,7 +58,11 @@ describe("Navigation", () => {
       cy.url().should("not.include", `/movies/${movieId}/reviews`);
     });
     it("navigate to the full review page when a 'Full Review' link is clicked", () => {
-      // TODO
+      cy.contains("Show reviews").click();
+      cy.url().should("include", `/movies/${movieId}/reviews`);
+      cy.get("tbody").find("a").eq(0).click();
+      cy.url().should("include", `/reviews/`)
+
     });
   });
   describe("From the Favorites page", () => {
@@ -84,7 +88,12 @@ describe("Navigation", () => {
       cy.get("h2").contains("No. Movies");
     });
     it("should navigate from favorites page to movie details and back", () => {
-      // TODO
-    });
+      cy.get(".card").eq(0).find("button").click();
+      cy.get("nav").find("li").eq(1).find ("a").click();
+      cy.get(".card").eq(0).find("img").click();
+      cy.get("svg[data-icon-arrow-circle-left]").click();
+      cy.url().should("include",  `/movies/favorites`);
+      cy.get("h2").contains("favourite movies")
+      });
   });
 });
