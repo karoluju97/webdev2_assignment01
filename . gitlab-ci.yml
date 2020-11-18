@@ -11,15 +11,13 @@ variables:
   npm_config_cache: "$CI_PROJECT_DIR/.npm"
   CYPRESS_CACHE_FOLDER: "$CI_PROJECT_DIR/cache/Cypress"
   CYPRESS_TMDB_KEY: "b3ecb9b12961342dace36eaa8a4fde72"
+
 # Jobs 
 
 install_dependencies:
   stage: install
   script:
     - npm ci
-  artifacts:
-    paths:
-      - node_modules/
 
 bundle_app:
   stage: build
