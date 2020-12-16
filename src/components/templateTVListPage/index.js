@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import HeaderList from "../headerTVList";
-import MovieList from "../movieList";
+import TVList from "../tvList";
 import FilterControls from "../filterControls";
 
 const TVListPageTemplate = ({ tv, title, action }) => {
@@ -26,10 +26,10 @@ const TVListPageTemplate = ({ tv, title, action }) => {
     <>
       <HeaderList title={title} numTv={displayedTv.length} />
       <FilterControls onUserInput={handleChange} numTv={displayedTv.length}/>
-      <MovieList
+      <TVList
         action={action}
         tv={displayedTv}
-      ></MovieList>
+      ></TVList>
     </>
   );
 };
