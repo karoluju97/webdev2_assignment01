@@ -1,6 +1,6 @@
 import React from "react";
 
-const Header = ({ title, numTV }) => {
+const HeaderList = ({ title, numTV }) => {
   return (
     <div className="row">
       <div className="col-md-6 offset-4">
@@ -13,4 +13,4 @@ const Header = ({ title, numTV }) => {
   );
 };
 
-export default Header;
+export default HeaderList;
