@@ -9,6 +9,7 @@ import MovieReviewPage from "./pages/movieReviewPage";
 import SiteHeader from './components/siteHeader'
 import Upcoming from "./pages/upcomingPage";
 import popularTV from "./pages/popularTVPage";
+import latestTV from "./pages/latestTVPage";
 import MoviesContextProvider from "./contexts/moviesContext";
 import GenresContextProvider from "./contexts/genresContext";
 import TVContextProvider from "./contexts/tvContext";
@@ -29,6 +30,7 @@ const App = () => {
                 <Route exact path="/movies/favorites" component={FavoriteMoviesPage} />
                 <Route exact path="/movies/upcoming" component={Upcoming} />
                 <Route exact path="/tvs/popular" component={popularTV} />
+                <Route exact path="/tvs/latest" component={latestTV} />
                 <Route path="/movies/:id" component={MoviePage} />
                 <Route path="/" component={HomePage} />
                 <Redirect from="*" to="/" />

@@ -52,9 +52,9 @@ export const getMovies = () => {
       .then(json => json.results);
   };
 
-  export const getlatestTVShow = id => {
+  export const getTopRatedTVShow = id => {
     return fetch(
-      `https://api.themoviedb.org/3/tv/latest?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1`
+      `https://api.themoviedb.org/3/tv/top_rated?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1`
     )
       .then(res => res.json())
       .then(json => json.results);

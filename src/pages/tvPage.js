@@ -20,14 +20,14 @@ const MoviePage = props => {
             {!props.history.location.pathname.endsWith("/reviews") ? (
               <Link
                 className="btn btn-primary btn-block active"
-                to={`/movies/${id}/reviews`}
+                to={`/tv/${id}/reviews`}
               >
                 Show Reviews (Extracts)
               </Link>
             ) : (
               <Link
                 className="btn btn-primary btn-block active"
-                to={`/movies/${id}`}
+                to={`/tv/${id}`}
               >
                 Hide Reviews 
               </Link>
@@ -35,7 +35,7 @@ const MoviePage = props => {
           </div>
         </div>
         <Route
-          path={`/movies/:id/reviews`}
+          path={`/tv/:id/reviews`}
           render={props => <MovieReviews tv={tv} {...props} />}
         />
       </>

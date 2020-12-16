@@ -1,23 +1,23 @@
 import React, { useContext } from "react";
 import TVPageTemplate from '../components/templateTVListPage'
 import {TVContext} from '../contexts/tvContext'
-import AddToFavoriteTVButton from '../components/buttons/addToFavoriteTV'
+import AddToWatchTVButton from '../components/buttons/addToWatchTV'
 
-const PopularTV = () => {
+const TopRatedTV = () => {
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const context = useContext(TVContext);
-    const tvShows = context.tvShows.filter((m) => {  // New
-        return !("favoriteTV" in m);
+    const tvShows = context.latest.filter((m) => {  // New
+        return !("watchListTV" in m);
       });
     return (
         <TVPageTemplate
-        name='Popular TV'
-            tvShows={tvShows}  /* Changed */
+          name='Top Rated'
+            latest={tvShows}  /* Changed */
             action={(tv) => {
-                return <AddToFavoriteTVButton tv={tv} />;
+                return <AddToWatchTVButton tv={tv} />;
             }}
         />
     );
 };
 
-export default PopularTV;
+export default TopRatedTV;

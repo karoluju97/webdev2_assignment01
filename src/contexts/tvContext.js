@@ -1,5 +1,5 @@
 import React, { useEffect, createContext, useReducer } from "react";
-import { getPopularTVShow, getlatestTVShow } from "../api/tmdb-api";
+import { getPopularTVShow, getTopRatedTVShow } from "../api/tmdb-api";
 
 export const TVContext = createContext(null);
 
@@ -8,19 +8,19 @@ const reducer = (state, action) => {
     case "add-favoriteTV":
       return {
         tvShows: state.tvShows.map((m) =>
-          m.id === action.payload.tv.id ? { ...m, favorite: true } : m
+          m.id === action.payload.tv.id ? { ...m, favoriteTV: true } : m
         ),
         latest: [...state.latest],
       };
     case "add-watchListTV":
       return {
         latest: state.latest.map((m) =>
-          m.id === action.payload.tv.id ? { ...m, watchList: true } : m
+          m.id === action.payload.tv.id ? { ...m, watchListTV: true } : m
         ),
         tvShows: [...state.tvShows],
       };
     case "load":
-      return { tvShows: action.payload.tvShows };
+      return { tvShows: action.payload.tvShows, latest: [...state.latest] };
     case "load-upcoming":
       return { latest: action.payload.tvShows, tvShows: [...state.tvShows] };
     default:
@@ -31,12 +31,12 @@ const reducer = (state, action) => {
 const TVContextProvider = (props) => {
   const [state, dispatch] = useReducer(reducer, { tvShows: [], latest: [] });
 
-  const addToFavorites = (tvId) => {
+  const addToFavoriteTV = (tvId) => {
     const index = state.tvShows.map((m) => m.id).indexOf(tvId);
     dispatch({ type: "add-favoriteTV", payload: { tv: state.tvShows[index] } });
   };
 
-  const addToWatchList = (tvId) => {
+  const addToWatchListTV = (tvId) => {
     const index = state.latest.map((m) => m.id).indexOf(tvId);
     dispatch({ type: "add-watchListTV", payload: { tv: state.latest[index] } });
   };
@@ -49,7 +49,7 @@ const TVContextProvider = (props) => {
   }, []);
 
   useEffect(() => {
-    getlatestTVShow().then((tvShows) => {
+    getTopRatedTVShow().then((tvShows) => {
       dispatch({ type: "load-upcoming", payload: { tvShows } });
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -60,8 +60,8 @@ const TVContextProvider = (props) => {
       value={{
         tvShows: state.tvShows,
         latest: state.latest,
-        addToFavorites: addToFavorites,
-        addToWatchList: addToWatchList
+        addToFavoriteTV: addToFavoriteTV,
+        addToWatchListTV: addToWatchListTV
       }}
     >
       {props.children}
