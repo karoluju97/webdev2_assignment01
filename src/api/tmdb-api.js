@@ -11,6 +11,12 @@ export const getMovies = () => {
       `https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.REACT_APP_TMDB_KEY}`
     ).then(res => res.json());
   };
+
+  export const getTV = id => {
+    return fetch(
+      `https://api.themoviedb.org/3/tv/${id}?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US`
+    ).then(res => res.json());
+  };
   
   export const getGenres = () => {
     return fetch(
@@ -38,14 +44,6 @@ export const getMovies = () => {
       .then(json => json.results);
   };
 
-  export const getLatestTVShow = id => {
-    return fetch(
-      `https://api.themoviedb.org/3/tv/latest?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1`
-    )
-      .then(res => res.json())
-      .then(json => json.results);
-  };
-
   export const getPopularTVShow = id => {
     return fetch(
       `https://api.themoviedb.org/3/tv/popular?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1`
@@ -54,10 +52,3 @@ export const getMovies = () => {
       .then(json => json.results);
   };
 
-  export const getTopRatedTV = id => {
-    return fetch(
-      `https://api.themoviedb.org/3/tv/top_rated?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1`
-    )
-      .then(res => res.json())
-      .then(json => json.results);
-  };
