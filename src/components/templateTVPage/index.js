@@ -1,6 +1,6 @@
 import React from "react";
 import TVHeader from '../headerTV'
-import "./moviePage.css";
+import "./tvPage.css";
 
 const TemplateTVPage = ({ tv, children }) => {
   return (
@@ -14,7 +14,7 @@ const TemplateTVPage = ({ tv, children }) => {
                 ? `https://image.tmdb.org/t/p/w500/${tv.poster_path}`
                 : "./film-poster-placeholder.png"
             }
-            className="movie"
+            className="tv"
             alt={tv.title}
           />
         </div>
