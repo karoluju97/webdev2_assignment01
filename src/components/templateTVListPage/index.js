@@ -3,11 +3,11 @@ import HeaderList from "../headerTVList";
 import TVList from "../tvList";
 import FilterControls from "../filterControls";
 
-const TVListPageTemplate = ({ tv, title, action }) => {
+const TVListPageTemplate = ({ tvShows, title, action }) => {
   const [nameFilter, setNameFilter] = useState("");
   const [genreFilter, setGenreFilter] = useState("0");
   const genre = Number(genreFilter)
-  let displayedTv = tv
+  let displayedTv = tvShows
     .filter(m => {
       return m.title.toLowerCase().search(nameFilter.toLowerCase()) !== -1;
     })
