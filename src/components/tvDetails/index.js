@@ -33,9 +33,9 @@ export default ({ tv }) => {
       </ul>
       <ul className="list-group list-group-horizontal">
         <li key="slh" className="list-group-item list-group-item-dark">
-          Spoken Languages
+          Season Number
         </li>
-        {tv.spoken_languages.map(lang => (
+        {tv.season_number.map(lang => (
           <li key={lang.name} className="list-group-item">
             {lang.name}
           </li>
