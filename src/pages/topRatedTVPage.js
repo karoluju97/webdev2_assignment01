@@ -12,7 +12,7 @@ const TopRatedTV = () => {
     return (
         <TVPageTemplate
           name='Top Rated'
-            latest={tvShows}  /* Changed */
+            tvShows={tvShows}  /* Changed */
             action={(tv) => {
                 return <AddToWatchTVButton tv={tv} />;
             }}
