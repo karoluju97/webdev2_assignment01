@@ -130,11 +130,11 @@ List reference material links (articles/blogs).
 [review]: ./public/review.png
 [reviewLink]: ./public/reviewLink.png
 [cardLink]: ./public/cardLink.png
-[storiesUpdated]: ./public/01.png
-[topRatedTV]:./public/topRated.png
-[upcomingMovies]: ./public/upcoming.png
-[popularTV]:./public/popularTV.png
-[topRatedTV]:./public/topRated.png
-[favorite]: ./public/favorite.png
-[cypressDashboard]: ./public/dashboard.png
+[storiesUpdated]: ./public/01.PNG
+[topRatedTV]:./public/topRated.PNG
+[upcomingMovies]: ./public/upcoming.PNG
+[popularTV]:./public/popularTV.PNG
+[topRatedTV]:./public/topRated.PNG
+[favorite]: ./public/favorite.PNG
+[cypressDashboard]: ./public/dashboard.PNG
 
