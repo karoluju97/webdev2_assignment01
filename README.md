@@ -123,6 +123,8 @@ Cypress Dashboard URL: ... https://dashboard.cypress.io/projects/8gokvw/runs?bra
 
 List reference material links (articles/blogs).
 
+Youtube Link: https://www.youtube.com/watch?v=2goHsrCDa1M&ab_channel=Schwarzkng
+
 ---------------------------------
 
 [model]: ./data.jpg
